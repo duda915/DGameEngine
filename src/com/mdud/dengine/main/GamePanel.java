@@ -1,12 +1,12 @@
 package com.mdud.dengine.main;
 
-import com.mdud.dengine.utility.FPSMeter;
-import com.mdud.dengine.utility.Lagger;
-import com.mdud.dengine.utility.MotionTester;
+import com.mdud.dengine.states.GameStateManager;
+import com.mdud.dengine.utility.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+
 
 public class GamePanel extends JPanel implements Runnable{
     //Window Sizing
@@ -23,7 +23,12 @@ public class GamePanel extends JPanel implements Runnable{
     private BufferedImage bufferedGameImage;
     private Graphics2D mainGameGraphics;
 
+    //GameStateManager
+    private GameStateManager gsm = new GameStateManager();
 
+    //InputHandlers
+    private MouseHandler mouseHandler;
+    private KeyHandler keyHandler;
 
     public GamePanel(int width, int height) {
         this.width = width;
@@ -48,6 +53,9 @@ public class GamePanel extends JPanel implements Runnable{
         bufferedGameImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         mainGameGraphics = (Graphics2D) bufferedGameImage.getGraphics();
 
+        mouseHandler = new MouseHandler();
+        keyHandler = new KeyHandler();
+
     }
 
     @Override
@@ -60,7 +68,8 @@ public class GamePanel extends JPanel implements Runnable{
         final double UPS = 120.0; // Updates Per Second
         final double UPDATE_TICK = 1000000000 / UPS;
         final double UPDATE_LIMIT = 20; // In case of really slow render
-        int updatesCount = 0;
+        final double TARGET_FPS = 150;
+        int updatesCount;
 
         while (running) {
             timeNow = System.nanoTime();
@@ -68,6 +77,7 @@ public class GamePanel extends JPanel implements Runnable{
 
             while(((timeNow - lastUpdateTime) > UPDATE_TICK) && updatesCount < UPDATE_LIMIT) {
                 update();
+                input(mouseHandler, keyHandler);
                 lastUpdateTime += UPDATE_TICK;
                 updatesCount++;
             }
@@ -76,35 +86,52 @@ public class GamePanel extends JPanel implements Runnable{
                 lastUpdateTime = (long) (timeNow - UPDATE_TICK); // Synchronization, slow render fix
             }
 
+            input(mouseHandler, keyHandler);
             render();
             draw();
 
             Lagger.lag(0);
 
+            // Crude FPS Limiter - about 125 FPS Hardcoded
+            FPSMeter.measure(timeNow, System.nanoTime());
+            while(FPSMeter.getMeasurement() > TARGET_FPS) {
+                Thread.yield();
+                Lagger.lag(1);
+                FPSMeter.measure(timeNow, System.nanoTime());
+            }
+
             lastRenderTime = System.nanoTime();
-            FPSMeter.measure(timeNow, lastRenderTime);
+            FPSMeter.measureStable(timeNow, lastRenderTime);
         }
     }
 
-    public void update(){
-        MotionTester.updatePos(width, height);
+    private void update(){
+        //GameStateManager
+        gsm.update();
     }
 
-    public void render() {
+    private void render() {
         mainGameGraphics.setColor(new Color(64,64,64));
         mainGameGraphics.fillRect(0,0, width, height);
-        mainGameGraphics.setColor(new Color(207, 40, 43));
-        mainGameGraphics.fillRect(MotionTester.getPosX(), MotionTester.getPosY(), 25, 55);
 
+        //GameStateManager
+        gsm.render(mainGameGraphics);
+
+        //Rendering FPS
+        mainGameGraphics.setFont(new Font("CenturyGothic", Font.PLAIN, 12));
         mainGameGraphics.setColor(new Color(255, 255, 255));
-        mainGameGraphics.drawString(FPSMeter.getMeasurement().toString() + "FPS", 15, 15);
+        mainGameGraphics.drawString(String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS", 15, 15);
     }
 
-    public void draw() {
+    private void draw() {
         Graphics updateGraphics = getGraphics();
         updateGraphics.drawImage(bufferedGameImage, 0, 0, width, height, null);
         updateGraphics.dispose();
 
+    }
+
+    private void input(MouseHandler mouseHandler, KeyHandler keyHandler) {
+        gsm.input(mouseHandler, keyHandler);
     }
 
 }
