@@ -9,11 +9,21 @@ import java.awt.*;
 public class PlayState extends GameState {
     @Override
     public void update() {
-        MotionTester.updatePos(640, 360);
+
     }
 
     @Override
     public void input(MouseHandler mouseHandler, KeyHandler keyHandler) {
+        if(keyHandler.keyUp.isDown())
+            MotionTester.updatePos(0,-5, 640,360);
+        if(keyHandler.keyDown.isDown())
+            MotionTester.updatePos(0,5, 640,360);
+        if(keyHandler.keyLeft.isDown())
+            MotionTester.updatePos(-5,0, 640,360);
+        if(keyHandler.keyRight.isDown())
+            MotionTester.updatePos(5,0, 640,360);
+        if(mouseHandler.lButtonDown())
+            MotionTester.setPos(mouseHandler.getMouseX(), mouseHandler.getMouseY());
 
     }
 

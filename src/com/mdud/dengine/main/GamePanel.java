@@ -53,8 +53,8 @@ public class GamePanel extends JPanel implements Runnable{
         bufferedGameImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         mainGameGraphics = (Graphics2D) bufferedGameImage.getGraphics();
 
-        mouseHandler = new MouseHandler();
-        keyHandler = new KeyHandler();
+        mouseHandler = new MouseHandler(this);
+        keyHandler = new KeyHandler(this);
 
     }
 
@@ -86,16 +86,15 @@ public class GamePanel extends JPanel implements Runnable{
                 lastUpdateTime = (long) (timeNow - UPDATE_TICK); // Synchronization, slow render fix
             }
 
-            input(mouseHandler, keyHandler);
             render();
             draw();
 
             Lagger.lag(0);
 
-            // Crude FPS Limiter - about 125 FPS Hardcoded
+            //Crude FPS Limiter - about 125 FPS Hardcoded
             FPSMeter.measure(timeNow, System.nanoTime());
             while(FPSMeter.getMeasurement() > TARGET_FPS) {
-                Thread.yield();
+                Thread.yield(); // frees processor from working
                 Lagger.lag(1);
                 FPSMeter.measure(timeNow, System.nanoTime());
             }
