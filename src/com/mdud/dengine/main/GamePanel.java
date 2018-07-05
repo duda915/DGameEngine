@@ -36,7 +36,7 @@ public class GamePanel extends JPanel implements Runnable{
     private KeyHandler keyHandler;
 
     //Custom Sprite Font - com.mdud.dengine.graphics.font.Font
-    private Font fpsCounterFont;
+    private Font fpsFont;
 
     public GamePanel(int width, int height) {
         this.width = width;
@@ -66,9 +66,8 @@ public class GamePanel extends JPanel implements Runnable{
 
         gsm = new GameStateManager();
 
-        fpsCounterFont = new Font("fonts/testfont.png", 20);
-        // sprawdzic bufferedfilterop
-
+        fpsFont = new Font("fonts/testfont.png", 20);
+        fpsFont.scaleFont(0.7, 0.7);
     }
 
     @Override
@@ -131,14 +130,8 @@ public class GamePanel extends JPanel implements Runnable{
         gsm.render(mainGameGraphics);
 
         //Rendering FPS Counter
-        fpsCounterFont.drawString(mainGameGraphics, String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS",
-                new Vector2D(15, 15), 15);
-
-        /*
-        mainGameGraphics.setFont(new Font("CenturyGothic", Font.PLAIN, 12));
-        mainGameGraphics.setColor(new Color(255, 255, 255));
-        mainGameGraphics.drawString(String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS", 15, 15);
-        */
+        fpsFont.drawString(mainGameGraphics, String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS",
+                new Vector2D(15, 15), 10);
     }
 
     private void draw() {

@@ -4,6 +4,8 @@ import com.mdud.dengine.graphics.Sprite;
 import com.mdud.dengine.graphics.Vector2D;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImageOp;
 
 public class Font {
@@ -40,8 +42,8 @@ public class Font {
         }
     }
 
-    public void setFilter(BufferedImageOp filter) {
-        this.filter = filter;
+    public void scaleFont(double sx, double sy) {
+        this.filter = new AffineTransformOp(AffineTransform.getScaleInstance(sx, sy), AffineTransformOp.TYPE_BILINEAR);
     }
 
     public Sprite getFontSprite() {
