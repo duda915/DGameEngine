@@ -1,7 +1,12 @@
 package com.mdud.dengine.main;
 
+import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.graphics.font.Font;
 import com.mdud.dengine.states.GameStateManager;
-import com.mdud.dengine.utility.*;
+import com.mdud.dengine.utility.input.KeyHandler;
+import com.mdud.dengine.utility.input.MouseHandler;
+import com.mdud.dengine.utility.timing.FPSMeter;
+import com.mdud.dengine.utility.timing.Sleeper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,11 +29,14 @@ public class GamePanel extends JPanel implements Runnable{
     private Graphics2D mainGameGraphics;
 
     //GameStateManager
-    private GameStateManager gsm = new GameStateManager();
+    private GameStateManager gsm;
 
     //InputHandlers
     private MouseHandler mouseHandler;
     private KeyHandler keyHandler;
+
+    //Custom Sprite Font - com.mdud.dengine.graphics.font.Font
+    private Font fpsCounterFont;
 
     public GamePanel(int width, int height) {
         this.width = width;
@@ -55,6 +63,11 @@ public class GamePanel extends JPanel implements Runnable{
 
         mouseHandler = new MouseHandler(this);
         keyHandler = new KeyHandler(this);
+
+        gsm = new GameStateManager();
+
+        fpsCounterFont = new Font("fonts/testfont.png", 20);
+        // sprawdzic bufferedfilterop
 
     }
 
@@ -89,13 +102,14 @@ public class GamePanel extends JPanel implements Runnable{
             render();
             draw();
 
-            Lagger.lag(0);
+            //Lag Tester
+            Sleeper.sleep(0);
 
             //Crude FPS Limiter - about 125 FPS Hardcoded
             FPSMeter.measure(timeNow, System.nanoTime());
             while(FPSMeter.getMeasurement() > TARGET_FPS) {
                 Thread.yield(); // frees processor from working
-                Lagger.lag(1);
+                Sleeper.sleep(1);
                 FPSMeter.measure(timeNow, System.nanoTime());
             }
 
@@ -116,10 +130,15 @@ public class GamePanel extends JPanel implements Runnable{
         //GameStateManager
         gsm.render(mainGameGraphics);
 
-        //Rendering FPS
+        //Rendering FPS Counter
+        fpsCounterFont.drawString(mainGameGraphics, String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS",
+                new Vector2D(15, 15), 15);
+
+        /*
         mainGameGraphics.setFont(new Font("CenturyGothic", Font.PLAIN, 12));
         mainGameGraphics.setColor(new Color(255, 255, 255));
         mainGameGraphics.drawString(String.format("%.2f", FPSMeter.getStableMeasurement()) + "FPS", 15, 15);
+        */
     }
 
     private void draw() {

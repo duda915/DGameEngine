@@ -1,4 +1,4 @@
-package com.mdud.dengine.utility;
+package com.mdud.dengine.utility.timing;
 
 public class FPSMeter {
     private static int measurementsCount = 0;
@@ -10,6 +10,7 @@ public class FPSMeter {
         measurement = 1000000000D / (after - before);
     }
 
+    //After 20 measurements averages result to stableMeasurement
     public static void measureStable(long before, long after) {
         measurement = 1000000000D / (after - before);
         stableMeasurementTemp += measurement;

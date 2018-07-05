@@ -1,4 +1,4 @@
-package com.mdud.dengine.utility;
+package com.mdud.dengine.utility.input;
 
 import com.mdud.dengine.main.GamePanel;
 

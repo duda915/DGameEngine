@@ -1,7 +1,7 @@
 package com.mdud.dengine.states;
 
-import com.mdud.dengine.utility.KeyHandler;
-import com.mdud.dengine.utility.MouseHandler;
+import com.mdud.dengine.utility.input.KeyHandler;
+import com.mdud.dengine.utility.input.MouseHandler;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -11,6 +11,8 @@ public class GameStateManager {
 
     public GameStateManager() {
         gameStates = new ArrayList<>();
+
+        //states configuration
         gameStates.add(new PlayState());
     }
 

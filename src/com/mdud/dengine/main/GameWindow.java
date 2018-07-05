@@ -8,6 +8,7 @@ public class GameWindow extends JFrame {
         setTitle("DGameEngine");
         setContentPane(new GamePanel(640, 360));
         pack();
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

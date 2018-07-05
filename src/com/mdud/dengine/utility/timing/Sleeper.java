@@ -1,8 +1,8 @@
-package com.mdud.dengine.utility;
+package com.mdud.dengine.utility.timing;
 
 
-public class Lagger {
-    public static void lag(int ms) {
+public class Sleeper {
+    public static void sleep(int ms) {
         if (ms > 0) {
             try {
                 Thread.sleep(ms);
