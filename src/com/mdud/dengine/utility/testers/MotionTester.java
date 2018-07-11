@@ -31,11 +31,11 @@ public class MotionTester {
         positionVector.setPosition(x, y);
     }
 
-    public int getPosX() {
+    public float getPosX() {
         return positionVector.getX();
     }
 
-    public int getPosY() {
+    public float getPosY() {
         return positionVector.getY();
     }
 }

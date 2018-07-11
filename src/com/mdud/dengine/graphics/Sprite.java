@@ -55,21 +55,21 @@ public class Sprite {
     }
 
     public void drawSpriteSheet(Graphics2D graphics2D, Vector2D pos, BufferedImageOp filter) {
-        graphics2D.drawImage(spriteSheet, filter, pos.getX(), pos.getY());
+        graphics2D.drawImage(spriteSheet, filter, (int) pos.getX(), (int) pos.getY());
     }
 
     public void drawSprite(Graphics2D graphics2D, int row, int col, Vector2D pos, BufferedImageOp filter) {
-        graphics2D.drawImage(spriteArray[row][col], filter, pos.getX(), pos.getY());
+        graphics2D.drawImage(spriteArray[row][col], filter, (int) pos.getX(), (int) pos.getY());
     }
 
     public void drawSprite(Graphics2D graphics2D, int i, Vector2D pos, BufferedImageOp filter) {
-        graphics2D.drawImage(getSprite(i), filter, pos.getX(), pos.getY());
+        graphics2D.drawImage(getSprite(i), filter, (int) pos.getX(), (int) pos.getY());
     }
 
     public void drawSpriteArray(Graphics2D graphics2D, Vector2D pos, int xOffset, int yOffset, BufferedImageOp filter) {
         for(int i = 0 ; i < spriteArrayRows; i++) {
             for(int j = 0; j < spriteArrayCols; j++) {
-                graphics2D.drawImage(spriteArray[i][j], filter, pos.getX() + xOffset * j, pos.getY() + yOffset * i);
+                graphics2D.drawImage(spriteArray[i][j], filter, (int) pos.getX() + xOffset * j, (int) pos.getY() + yOffset * i);
             }
         }
     }

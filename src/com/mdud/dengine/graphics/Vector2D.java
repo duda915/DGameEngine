@@ -1,8 +1,8 @@
 package com.mdud.dengine.graphics;
 
 public class Vector2D {
-    private int x;
-    private int y;
+    private float x;
+    private float y;
 
     public Vector2D() {
         x = 0;
@@ -19,23 +19,23 @@ public class Vector2D {
         this.y = vector.getY();
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(float y) {
         this.y = y;
     }
 
-    public void setPosition(int x, int y) {
+    public void setPosition(float x, float y) {
         this.x = x;
         this.y = y;
     }
