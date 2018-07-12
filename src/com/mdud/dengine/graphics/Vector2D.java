@@ -9,7 +9,7 @@ public class Vector2D {
         y = 0;
     }
 
-    public Vector2D(int x, int y) {
+    public Vector2D(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -40,11 +40,11 @@ public class Vector2D {
         this.y = y;
     }
 
-    public void incrementX(int incrementValue) {
+    public void incrementX(float incrementValue) {
         this.x += incrementValue;
     }
 
-    public void incrementY(int incrementValue) {
+    public void incrementY(float incrementValue) {
         this.y += incrementValue;
     }
 

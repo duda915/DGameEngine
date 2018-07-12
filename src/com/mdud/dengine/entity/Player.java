@@ -1,6 +1,7 @@
 package com.mdud.dengine.entity;
 
 import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.utility.collision.BoundingBox;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -11,6 +12,11 @@ public class Player extends Entity {
         setAnimationDelay(15);
         setMoveSpeed(2);
         setPosition(new Vector2D(20, 20));
+    }
+
+    @Override
+    public void handleCollision(Entity collisionEntity) {
+        setPosition(comittedPosition);
     }
 
     @Override

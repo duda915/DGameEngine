@@ -16,6 +16,7 @@ public class EntityManager {
 
         //Entity Configuration
         entities.add(player);
+        entities.add(new TestDummy());
     }
 
     public void input(MouseHandler mouseHandler, KeyHandler keyHandler) {
@@ -23,13 +24,28 @@ public class EntityManager {
     }
 
     public void update() {
+
         for(Entity entity : entities)
             entity.update();
+        checkCollision();
     }
 
     public void render(Graphics2D graphics) {
         for (Entity entity : entities)
             entity.render(graphics);
+    }
+
+    private void checkCollision() {
+        //TODO only moving enitities
+        for(Entity entity : entities) {
+            for (Entity entity1 :entities) {
+                if(entity != entity1)
+                    if (entity.collisionBox.collides(entity1.collisionBox))
+                        entity.handleCollision(entity1);
+            }
+
+            entity.commitPosition();
+        }
     }
 
     public void addEntity(Entity entity) {

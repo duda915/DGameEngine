@@ -3,6 +3,7 @@ package com.mdud.dengine.entity;
 import com.mdud.dengine.graphics.Animation;
 import com.mdud.dengine.graphics.Sprite;
 import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.utility.collision.BoundingBox;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -32,21 +33,27 @@ public abstract class Entity {
     //Movement
     private float moveSpeed = 5;
 
-    //Collision
-
-    public Entity(String file) {
-        spriteSheet = new Sprite(file);
-        animation = new Animation();
-        animation.setFrames(spriteSheet.getSpriteArrayCols());
-    }
+    //collision
+    protected BoundingBox collisionBox;
+    protected Vector2D comittedPosition;
 
     public Entity(String file, int spriteSize) {
         spriteSheet = new Sprite(file, spriteSize);
         animation = new Animation();
         animation.setFrames(spriteSheet.getSpriteArrayCols());
+        position = new Vector2D(0,0);
+        collisionBox = new BoundingBox(position, spriteSize);
+        comittedPosition = new Vector2D();
     }
 
     public abstract void input(MouseHandler mouseHandler, KeyHandler keyHandler);
+
+    public abstract void handleCollision(Entity entity);
+
+    protected void commitPosition() {
+        comittedPosition = position.copyVector();
+    }
+
 
     public void update() {
 
@@ -72,11 +79,17 @@ public abstract class Entity {
         } else {
             animation.stopAnimation();
         }
+
+        //update collisionbox
+        collisionBox.updateBox(position);
     }
 
     public void render(Graphics2D graphics) {
         graphics.drawImage(animation.getAnimationFrame(spriteSheet.getSpriteArrayRow(currentAction)),
                 null,(int) position.getX(),(int) position.getY());
+
+        //for testing
+        collisionBox.drawBoundingBox(graphics);
     }
 
     public void setAnimationDelay(int delay) {
@@ -95,8 +108,20 @@ public abstract class Entity {
         this.position = position;
     }
 
+    public Vector2D getPosition() {
+        return position;
+    }
+
     public Animation getAnimation() {
         return animation;
+    }
+
+    public Sprite getSpriteSheet() {
+        return spriteSheet;
+    }
+
+    public int getEntitySize() {
+        return spriteSheet.getSpriteSize();
     }
 
     public void setMoveSpeed(int moveSpeed) {
@@ -107,4 +132,5 @@ public abstract class Entity {
         position.setPosition(position.getX() + xOffset, position.getY() + yOffset);
         isDoingAction = true;
     }
+
 }
