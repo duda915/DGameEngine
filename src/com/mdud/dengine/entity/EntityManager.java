@@ -1,6 +1,5 @@
 package com.mdud.dengine.entity;
 
-import com.mdud.dengine.entity.player.Player;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
