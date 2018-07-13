@@ -12,16 +12,16 @@ import java.awt.*;
 public abstract class Entity {
 
     //Graphics
-    private Sprite spriteSheet;
-    private Animation animation;
-    private Vector2D position;
+    protected Sprite spriteSheet;
+    protected Animation animation;
+    protected Vector2D position;
 
     //Animated states
-    private final int UP = 0;
-    private final int DOWN = 1;
-    private final int LEFT = 2;
-    private final int RIGHT = 3;
-    private int currentAction = UP;
+    protected final int UP = 0;
+    protected final int DOWN = 1;
+    protected final int LEFT = 2;
+    protected final int RIGHT = 3;
+    protected int currentAction = UP;
 
     //Entity controls
     protected boolean isWalkingUp = false;
@@ -31,29 +31,45 @@ public abstract class Entity {
     protected boolean isDoingAction = false;
 
     //Movement
-    private float moveSpeed = 5;
+    protected float moveSpeed = 5;
 
     //collision
     protected BoundingBox collisionBox;
-    protected Vector2D comittedPosition;
+    protected Vector2D committedPosition;
 
     public Entity(String file, int spriteSize) {
         spriteSheet = new Sprite(file, spriteSize);
         animation = new Animation();
         animation.setFrames(spriteSheet.getSpriteArrayCols());
         position = new Vector2D(0,0);
+        committedPosition = position.copyVector();
         collisionBox = new BoundingBox(position, spriteSize);
-        comittedPosition = new Vector2D();
+        collisionBox.updateBox(position);
     }
 
-    public abstract void input(MouseHandler mouseHandler, KeyHandler keyHandler);
+    public void input(MouseHandler mouseHandler, KeyHandler keyHandler){}
 
-    public abstract void handleCollision(Entity entity);
+    public void handleCollision(Entity entity) {
+        Vector2D tmp = position.copyVector();
+        position.setX(committedPosition.getX());
+        collisionBox.updateBox(position);
+        if(!collisionBox.collides(entity.collisionBox)) {
+            return;
+        }
+        position = tmp.copyVector();
+        position.setY(committedPosition.getY());
+        collisionBox.updateBox(position);
+        if(!collisionBox.collides(entity.collisionBox)) {
+            return;
+        }
 
-    protected void commitPosition() {
-        comittedPosition = position.copyVector();
+        position = committedPosition.copyVector();
+        collisionBox.updateBox(position);
     }
 
+    public void commitPosition() {
+        committedPosition = position.copyVector();
+    }
 
     public void update() {
 
@@ -82,11 +98,12 @@ public abstract class Entity {
 
         //update collisionbox
         collisionBox.updateBox(position);
+
     }
 
     public void render(Graphics2D graphics) {
         graphics.drawImage(animation.getAnimationFrame(spriteSheet.getSpriteArrayRow(currentAction)),
-                null,(int) position.getX(),(int) position.getY());
+                null,(int) position.getWorldX(),(int) position.getWorldY());
 
         //for testing
         collisionBox.drawBoundingBox(graphics);
@@ -128,7 +145,7 @@ public abstract class Entity {
         this.moveSpeed = moveSpeed;
     }
 
-    private void move(float xOffset, float yOffset) {
+    protected void move(float xOffset, float yOffset) {
         position.setPosition(position.getX() + xOffset, position.getY() + yOffset);
         isDoingAction = true;
     }

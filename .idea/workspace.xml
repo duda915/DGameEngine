@@ -2,22 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd2fc981-ef28-4162-b109-30b2ecec92d5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/EntityManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/EntityManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/TestDummy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/TestDummy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/graphics/Vector2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/graphics/Vector2D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheet.psd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheet.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheetformatted.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheetformatted.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/testsheet.psd" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/testsheet.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/testsheetformatted.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/testsheetformatted.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/utility/collision/BoundingBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/utility/collision/BoundingBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/utility/testers/MotionTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/utility/testers/MotionTester.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/graphics/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/graphics/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,33 +33,32 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="123" column="43" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
+            <state relative-caret-position="381">
+              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
-                <element signature="e#3038#3039#0" expanded="true" />
-                <element signature="e#3069#3070#0" expanded="true" />
-                <element signature="e#3178#3179#0" expanded="true" />
-                <element signature="e#3211#3212#0" expanded="true" />
-                <element signature="e#3246#3247#0" expanded="true" />
-                <element signature="e#3296#3297#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="-319">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -66,38 +66,8 @@
       <file leaf-file-name="TestDummy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/EntityManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoundingBox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,13 +120,14 @@
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/ICollide.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/CollisionObject.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/graphics/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java" />
-        <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/EntityManager.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/main/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/graphics/Vector2D.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java" />
         <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Player.java" />
       </list>
     </option>
   </component>
@@ -191,17 +162,6 @@
             <path>
               <item name="DGameEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="DGameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DGameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DGameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sprites" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DGameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DGameEngine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -215,7 +175,15 @@
               <item name="DGameEngine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dengine" type="462c0819:PsiDirectoryNode" />
-              <item name="graphics" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DGameEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DGameEngine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dengine" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DGameEngine" type="b2602c69:ProjectViewProjectNode" />
@@ -360,24 +328,33 @@
       <workItem from="1530617413016" duration="107000" />
       <workItem from="1530778845304" duration="10541000" />
       <workItem from="1530819564036" duration="1619000" />
-      <workItem from="1531291382959" duration="19174000" />
+      <workItem from="1531291382959" duration="32127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54511000" />
+    <option name="totallyTimeSpent" value="67464000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32857144" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32857144" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -385,10 +362,10 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.24963397" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.50158733" side_tool="true" weight="0.24963397" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -409,7 +386,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -479,13 +456,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/utility/FPSLimiter.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/Graphics2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="738" column="20" selection-start-line="738" selection-start-column="20" selection-end-line="738" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/event/MouseEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -546,13 +516,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/main/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -649,6 +612,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/graphics/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/java/awt/Graphics2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="406" column="22" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/main/GameLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -664,49 +644,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/main/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="113" />
+        <state relative-caret-position="153">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/main/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/graphics/Vector2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="53" column="58" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/EntityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="493">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/utility/collision/BoundingBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="276">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/graphics/Vector2D.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/graphics/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -715,43 +700,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="123" column="43" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
+        <state relative-caret-position="381">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3069#3070#0" expanded="true" />
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3211#3212#0" expanded="true" />
-            <element signature="e#3246#3247#0" expanded="true" />
-            <element signature="e#3296#3297#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/TestDummy.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state relative-caret-position="-319">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/player/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>

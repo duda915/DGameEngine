@@ -1,5 +1,6 @@
 package com.mdud.dengine.entity;
 
+import com.mdud.dengine.entity.player.Player;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -25,9 +26,10 @@ public class EntityManager {
 
     public void update() {
 
-        for(Entity entity : entities)
+        for(Entity entity : entities) {
             entity.update();
-        checkCollision();
+            checkCollision(entity);
+        }
     }
 
     public void render(Graphics2D graphics) {
@@ -35,20 +37,18 @@ public class EntityManager {
             entity.render(graphics);
     }
 
-    private void checkCollision() {
-        //TODO only moving enitities
-        for(Entity entity : entities) {
-            for (Entity entity1 :entities) {
-                if(entity != entity1)
-                    if (entity.collisionBox.collides(entity1.collisionBox))
-                        entity.handleCollision(entity1);
-            }
-
-            entity.commitPosition();
+    private void checkCollision(Entity entity) {
+        for (Entity entity1 : entities) {
+            if(entity != entity1 && entity1.collisionBox != null)
+                if (entity.collisionBox.collides(entity1.collisionBox))
+                    entity.handleCollision(entity1);
         }
+
+        entity.commitPosition();
     }
 
     public void addEntity(Entity entity) {
         entities.add(entity);
     }
 }
+

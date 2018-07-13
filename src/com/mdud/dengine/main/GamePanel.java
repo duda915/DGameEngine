@@ -15,8 +15,8 @@ import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable{
     //Window Sizing
-    private int width;
-    private int height;
+    public static int width;
+    public static int height;
 
     //Thread
     private Thread thread;

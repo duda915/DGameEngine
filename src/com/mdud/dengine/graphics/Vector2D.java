@@ -4,6 +4,9 @@ public class Vector2D {
     private float x;
     private float y;
 
+    private static float worldX = 0;
+    private static float worldY = 0;
+
     public Vector2D() {
         x = 0;
         y = 0;
@@ -48,7 +51,7 @@ public class Vector2D {
         this.y += incrementValue;
     }
 
-    public void incrementPosition(int incrementX, int incrementY) {
+    public void incrementPosition(float incrementX, float incrementY) {
         this.x += incrementX;
         this.y += incrementY;
     }
@@ -59,5 +62,23 @@ public class Vector2D {
 
     public Vector2D copyVector() {
         return new Vector2D(this);
+    }
+
+    public float getWorldX() {
+        return x - worldX;
+    }
+
+    public float getWorldY() {
+        return y - worldY;
+    }
+
+    public void setWorldPos(float x, float y) {
+        worldX = x;
+        worldY = y;
+    }
+
+    public void offsetWorldPos(float xOffset, float yOffset) {
+        worldX += xOffset;
+        worldY += yOffset;
     }
 }

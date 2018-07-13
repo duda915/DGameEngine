@@ -15,20 +15,12 @@ public class TestDummy extends Entity {
         counter = 0;
     }
 
-    @Override
-    public void handleCollision(Entity entity) {
-        setPosition(comittedPosition);
-    }
-
-    @Override
-    public void input(MouseHandler mouseHandler, KeyHandler keyHandler) {
-
-    }
 
     @Override
     public void update() {
         super.update();
         counter++;
+
         if(counter < 100) {
             isWalkingLeft = false;
             isWalkingRight = true;
@@ -40,5 +32,6 @@ public class TestDummy extends Entity {
         else {
             counter = 0;
         }
+
     }
 }
