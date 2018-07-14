@@ -60,6 +60,34 @@ public abstract class Entity {
     public void input(MouseHandler mouseHandler, KeyHandler keyHandler){}
 
     public void handleCollision(BoundingBox objectBox) {
+
+        Vector2D tmpVector = position.copyVector();
+        float centerDiffX = collisionBox.getCenterPos().getX() - objectBox.getCenterPos().getX();
+        float centerDiffY = collisionBox.getCenterPos().getY() - objectBox.getCenterPos().getY();
+        float collisionDistance = collisionBox.getDistanceToSide() + objectBox.getDistanceToSide();
+
+        float xCompensation = collisionDistance - Math.abs(centerDiffX);
+        float yCompensation = collisionDistance - Math.abs(centerDiffY);
+
+
+        if (xCompensation < yCompensation) {
+            if(centerDiffX > 0)
+                position.incrementX(xCompensation);
+            else
+                position.incrementX(-xCompensation);
+        } else {
+            if(centerDiffY > 0)
+                position.incrementY(yCompensation);
+            else
+                position.incrementY(-yCompensation);
+        }
+        collisionBox.updateBox(position);
+
+
+
+
+        /*
+        //Old Version
         Vector2D tmp = position.copyVector();
         position.setX(committedPosition.getX());
         collisionBox.updateBox(position);
@@ -75,6 +103,7 @@ public abstract class Entity {
 
         position = committedPosition.copyVector();
         collisionBox.updateBox(position);
+        */
     }
 
     public void commitPosition() {

@@ -2,7 +2,8 @@ package com.mdud.dengine.managers;
 
 import com.mdud.dengine.entity.Entity;
 import com.mdud.dengine.entity.Player;
-import com.mdud.dengine.entity.TestDummy;
+import com.mdud.dengine.entity.StandingDummy;
+import com.mdud.dengine.entity.WalkingDummy;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -19,7 +20,8 @@ public class EntityManager {
 
         //Entity Configuration
         entities.add(player);
-        entities.add(new TestDummy());
+        entities.add(new WalkingDummy());
+        entities.add(new StandingDummy());
     }
 
     public void input(MouseHandler mouseHandler, KeyHandler keyHandler) {
@@ -39,6 +41,7 @@ public class EntityManager {
             entity.render(graphics);
     }
 
+    //entity collision
     private void checkCollision(Entity entity) {
         for (Entity entity1 : entities) {
             if(entity != entity1 && entity1.getCollisionBox() != null)
