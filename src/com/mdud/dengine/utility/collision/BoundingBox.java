@@ -24,11 +24,11 @@ public class BoundingBox {
 
     //collides() helpers
     public boolean horizontalCollision(BoundingBox box) {
-        return Math.abs(centerPos.getWorldX() - box.getCenterPos().getWorldX()) < 2*distanceToSide;
+        return Math.abs(box.getCenterPos().getWorldX() - centerPos.getWorldX()) < distanceToSide + box.distanceToSide;
     }
 
     public boolean verticalCollision(BoundingBox box) {
-        return Math.abs(centerPos.getWorldY() - box.getCenterPos().getWorldY()) < 2*distanceToSide;
+        return Math.abs( box.getCenterPos().getWorldY() - centerPos.getWorldY()) < distanceToSide + box.distanceToSide;
     }
 
     public void updateBox(Vector2D position) {

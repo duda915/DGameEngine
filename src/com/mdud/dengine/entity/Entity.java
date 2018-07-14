@@ -47,19 +47,29 @@ public abstract class Entity {
         collisionBox.updateBox(position);
     }
 
+    public Entity(String file, int spriteSize, int scaledSpriteSize) {
+        spriteSheet = new Sprite(file, spriteSize, scaledSpriteSize);
+        animation = new Animation();
+        animation.setFrames(spriteSheet.getSpriteArrayCols());
+        position = new Vector2D(0,0);
+        committedPosition = position.copyVector();
+        collisionBox = new BoundingBox(position, scaledSpriteSize);
+        collisionBox.updateBox(position);
+    }
+
     public void input(MouseHandler mouseHandler, KeyHandler keyHandler){}
 
-    public void handleCollision(Entity entity) {
+    public void handleCollision(BoundingBox objectBox) {
         Vector2D tmp = position.copyVector();
         position.setX(committedPosition.getX());
         collisionBox.updateBox(position);
-        if(!collisionBox.collides(entity.collisionBox)) {
+        if(!collisionBox.collides(objectBox)) {
             return;
         }
         position = tmp.copyVector();
         position.setY(committedPosition.getY());
         collisionBox.updateBox(position);
-        if(!collisionBox.collides(entity.collisionBox)) {
+        if(!collisionBox.collides(objectBox)) {
             return;
         }
 
@@ -148,6 +158,10 @@ public abstract class Entity {
     protected void move(float xOffset, float yOffset) {
         position.setPosition(position.getX() + xOffset, position.getY() + yOffset);
         isDoingAction = true;
+    }
+
+    public BoundingBox getCollisionBox() {
+        return collisionBox;
     }
 
 }

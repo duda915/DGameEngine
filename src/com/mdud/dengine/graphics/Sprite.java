@@ -28,6 +28,12 @@ public class Sprite {
         loadSpriteArray();
     }
 
+    public Sprite(String file, int originalSpriteSize, int newSize) {
+        this.spriteSize = newSize;
+        loadSpriteSheet(file);
+        loadSpriteArray((float)newSize/originalSpriteSize);
+    }
+
     private void loadSpriteSheet(String file) {
         try {
             spriteSheet = ImageIO.read(getClass().getClassLoader().getResourceAsStream(file));
@@ -52,6 +58,46 @@ public class Sprite {
         }
 
         System.out.println("Loaded {rows: " + spriteArrayRows + ", cols: " + spriteArrayCols + "}");
+    }
+
+    private void loadSpriteArray(float scale) {
+        spriteSheetWidth = (int) (spriteSheet.getWidth() * scale);
+        spriteSheetHeight = (int) (spriteSheet.getHeight()  * scale);
+
+        BufferedImage scaled = new BufferedImage(spriteSheetWidth, spriteSheetHeight, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics2D = (Graphics2D) scaled.getGraphics();
+        graphics2D.scale(scale, scale);
+        graphics2D.drawImage(spriteSheet, null, 0, 0);
+        graphics2D.dispose();
+
+        spriteSheet = scaled;
+
+        spriteSheetWidth = spriteSheet.getWidth();
+        spriteSheetHeight = spriteSheet.getHeight();
+        spriteArrayCols = spriteSheetWidth / spriteSize;
+        spriteArrayRows = spriteSheetHeight / spriteSize;
+
+        spriteArray = new BufferedImage[spriteArrayRows][spriteArrayCols];
+
+        for(int i = 0 ; i < spriteArrayRows; i++) {
+            for(int j = 0; j < spriteArrayCols; j++) {
+                spriteArray[i][j] = spriteSheet.getSubimage(j * spriteSize, i * spriteSize, spriteSize, spriteSize);
+            }
+        }
+
+        System.out.println("Loaded {rows: " + spriteArrayRows + ", cols: " + spriteArrayCols + "}");
+    }
+
+
+
+    private BufferedImage imageToBufferedImage(Image img) {
+        BufferedImage tmp = new BufferedImage(img.getWidth(null),
+                img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics = tmp.createGraphics();
+        graphics.drawImage(img, 0, 0, null);
+        graphics.dispose();
+
+        return tmp;
     }
 
     public void drawSpriteSheet(Graphics2D graphics2D, Vector2D pos, BufferedImageOp filter) {

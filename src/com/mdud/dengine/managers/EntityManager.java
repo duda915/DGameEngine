@@ -1,5 +1,8 @@
-package com.mdud.dengine.entity;
+package com.mdud.dengine.managers;
 
+import com.mdud.dengine.entity.Entity;
+import com.mdud.dengine.entity.Player;
+import com.mdud.dengine.entity.TestDummy;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -38,9 +41,9 @@ public class EntityManager {
 
     private void checkCollision(Entity entity) {
         for (Entity entity1 : entities) {
-            if(entity != entity1 && entity1.collisionBox != null)
-                if (entity.collisionBox.collides(entity1.collisionBox))
-                    entity.handleCollision(entity1);
+            if(entity != entity1 && entity1.getCollisionBox() != null)
+                if (entity.getCollisionBox().collides(entity1.getCollisionBox()))
+                    entity.handleCollision(entity1.getCollisionBox());
         }
 
         entity.commitPosition();

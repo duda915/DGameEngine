@@ -2,7 +2,7 @@ package com.mdud.dengine.main;
 
 import com.mdud.dengine.graphics.Vector2D;
 import com.mdud.dengine.graphics.font.Font;
-import com.mdud.dengine.states.GameStateManager;
+import com.mdud.dengine.managers.GameStateManager;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 import com.mdud.dengine.utility.timing.FPSMeter;

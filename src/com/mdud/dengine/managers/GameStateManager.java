@@ -1,5 +1,7 @@
-package com.mdud.dengine.states;
+package com.mdud.dengine.managers;
 
+import com.mdud.dengine.states.GameState;
+import com.mdud.dengine.states.PlayState;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 

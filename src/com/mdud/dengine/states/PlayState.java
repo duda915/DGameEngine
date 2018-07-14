@@ -1,6 +1,6 @@
 package com.mdud.dengine.states;
 
-import com.mdud.dengine.entity.EntityManager;
+import com.mdud.dengine.managers.EntityManager;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 

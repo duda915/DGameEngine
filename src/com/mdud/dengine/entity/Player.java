@@ -2,6 +2,7 @@ package com.mdud.dengine.entity;
 
 import com.mdud.dengine.graphics.Vector2D;
 import com.mdud.dengine.main.GamePanel;
+import com.mdud.dengine.utility.collision.BoundingBox;
 import com.mdud.dengine.utility.input.KeyHandler;
 import com.mdud.dengine.utility.input.MouseHandler;
 
@@ -10,7 +11,7 @@ import java.awt.*;
 public class Player extends Entity {
 
     public Player() {
-        super("sprites/testsheetformatted.png", 64);
+        super("sprites/testsheetformatted.png", 64, 48);
         setAnimationDelay(15);
         setMoveSpeed(2);
         setPosition(new Vector2D(GamePanel.width/2 - getEntitySize()/2, GamePanel.height/2 - getEntitySize()/2));
@@ -20,6 +21,13 @@ public class Player extends Entity {
     @Override
     public void update() {
         super.update();
+    }
+
+    @Override
+    public void handleCollision(BoundingBox objectBox) {
+        super.handleCollision(objectBox);
+        position.setWorldPos(position.getX() - GamePanel.width/2 + getEntitySize()/2,
+                position.getY() - GamePanel.height/2 + getEntitySize()/2);
     }
 
     @Override
