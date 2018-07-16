@@ -49,11 +49,15 @@ public class EntityManager {
                     entity.handleCollision(entity1.getCollisionBox());
         }
 
-        entity.commitPosition();
+        //Old collision
+        //entity.commitPosition();
     }
 
     public void addEntity(Entity entity) {
         entities.add(entity);
+    }
+    public ArrayList<Entity> getEntities() {
+        return entities;
     }
 }
 

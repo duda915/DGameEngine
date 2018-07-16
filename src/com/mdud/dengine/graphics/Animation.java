@@ -2,6 +2,8 @@ package com.mdud.dengine.graphics;
 
 import java.awt.image.BufferedImage;
 
+//TODO backwards??
+
 public class Animation {
     private int currentFrame;
     private int delay;

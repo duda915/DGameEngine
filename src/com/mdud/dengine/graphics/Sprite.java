@@ -160,4 +160,8 @@ public class Sprite {
     public int getSpriteArrayCols() {
         return spriteArrayCols;
     }
+
+    public int getSpritesCount() {
+        return spriteArrayCols*spriteArrayRows;
+    }
 }
