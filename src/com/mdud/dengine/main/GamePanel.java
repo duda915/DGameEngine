@@ -105,12 +105,12 @@ public class GamePanel extends JPanel implements Runnable{
             Sleeper.sleep(0);
 
             //Crude FPS Limiter - about 125 FPS Hardcoded
-            FPSMeter.measure(timeNow, System.nanoTime());
-            while(FPSMeter.getMeasurement() > TARGET_FPS) {
-                Thread.yield(); // frees processor from working
-                Sleeper.sleep(1);
-                FPSMeter.measure(timeNow, System.nanoTime());
-            }
+//            FPSMeter.measure(timeNow, System.nanoTime());
+//            while(FPSMeter.getMeasurement() > TARGET_FPS) {
+//                Thread.yield(); // frees processor from working
+//                Sleeper.sleep(1);
+//                FPSMeter.measure(timeNow, System.nanoTime());
+//            }
 
             lastRenderTime = System.nanoTime();
             FPSMeter.measureStable(timeNow, lastRenderTime);

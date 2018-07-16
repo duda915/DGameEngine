@@ -17,7 +17,7 @@ public class ActionBlock extends Block {
     @Override
     public void action(Entity entity) {
         if(blockBox.collides(entity.getCollisionBox()))
-            System.out.println("Collision with action block");
+            entity.setPosition(new Vector2D(-20, -20));
     }
 
     @Override

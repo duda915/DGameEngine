@@ -41,7 +41,6 @@ public class BoundingBox {
                 size, size);
     }
 
-
     public Vector2D getCenterPos() {
         return centerPos;
     }
