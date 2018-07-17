@@ -36,9 +36,17 @@ public class TileManager {
          * Action Layer
          * Terrain Layer
          * Objects Layer
-         * -- Layers below rendered AFTER entities --
          * Terrain Overlay Layer
          * Objects Overlay Layer
+         *
+         * RENDERING ORDER:
+         * Terrain Layer
+         * Objects Layer
+         * --- ENTITIES ---
+         * Terrain Overlay Layer
+         * Objects Overlay Layer
+         * Collision Layer  --- only bounding box
+         * Action Layer     --- only bounding box
          *
          */
         map = mapLoader.getMap();
@@ -88,6 +96,10 @@ public class TileManager {
 
     public void lateDraw(Graphics2D graphics) {
         for (Block b : blocksLateRender)
+            b.draw(graphics);
+
+        //TESTING PURPOSE
+        for (Block b : specialBlocks)
             b.draw(graphics);
     }
 }

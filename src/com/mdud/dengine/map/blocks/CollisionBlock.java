@@ -24,7 +24,9 @@ public class CollisionBlock extends Block {
 
     @Override
     public void draw(Graphics2D graphics) {
-        graphics.drawImage(blockSprite, null,(int) blockPosition.getWorldX(), (int) blockPosition.getWorldY());
+        //graphics.drawImage(blockSprite, null,(int) blockPosition.getWorldX(), (int) blockPosition.getWorldY());
+        graphics.setColor(Color.CYAN);
+        blockBox.drawBoundingBox(graphics);
     }
 
     @Override
