@@ -13,6 +13,7 @@ import java.awt.*;
  * TODO entity statistics
  * TODO info overlay
  * TODO attacking
+ * TODO rendering order
  */
 
 public abstract class Entity {
