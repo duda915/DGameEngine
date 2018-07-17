@@ -75,10 +75,24 @@ public class Vector2D {
     public void setWorldPos(float x, float y) {
         worldX = x;
         worldY = y;
+
     }
 
     public void offsetWorldPos(float xOffset, float yOffset) {
         worldX += xOffset;
         worldY += yOffset;
+    }
+
+    @Override
+    public int hashCode() {
+        return Float.valueOf(x).hashCode() + Float.valueOf(y).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Vector2D vec = (Vector2D) obj;
+        if(x == vec.getX() && y == vec.getY())
+            return true;
+        return false;
     }
 }
