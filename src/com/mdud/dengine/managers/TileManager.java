@@ -20,7 +20,7 @@ public class TileManager {
         blocks = new ArrayList<>();
         squareSize = blockManager.getTileSet().getTileSize();
 
-        mapLoader = new MapLoader("resources/maps/testmap.tmx");
+        mapLoader = new MapLoader("resources/maps/dgedemo.tmx");
         loadMap(mapLoader);
     }
 

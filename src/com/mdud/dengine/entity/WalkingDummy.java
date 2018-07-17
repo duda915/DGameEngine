@@ -8,8 +8,8 @@ public class WalkingDummy extends Entity {
     private int counter;
 
     public WalkingDummy() {
-        super("sprites/testsheetformatted.png", 64, 32);
-        setPosition(new Vector2D(120, 120));
+        super("sprites/npctest.png", 32, 32);
+        setPosition(new Vector2D(1600, 1000));
         setMoveSpeed(1);
         setAnimationDelay(15);
         counter = 0;
@@ -24,12 +24,18 @@ public class WalkingDummy extends Entity {
         if(counter < 100) {
             isWalkingLeft = false;
             isWalkingRight = true;
+            isWalkingUp = false;
+
         }
         else if(counter < 200) {
             isWalkingLeft = true;
             isWalkingRight = false;
-        }
-        else {
+            isWalkingUp = false;
+        } else if (counter < 300) {
+            isWalkingLeft = false;
+            isWalkingRight = false;
+            isWalkingUp = true;
+        } else {
             counter = 0;
         }
 

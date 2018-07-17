@@ -18,7 +18,7 @@ public class BlockManager {
     private TileSet tileSet;
 
     public BlockManager() {
-        tileSet = new TileSet("sprites/tilesformatted.png", 16, 48);
+        tileSet = new TileSet("sprites/overworld.png", 16, 48);
 
         blocksList = new ArrayList<>();
         collisionBlocksId = new ArrayList<>();
@@ -48,18 +48,18 @@ public class BlockManager {
     }
 
     private void addCollisionIds() {
-        collisionBlocksId.add(164);
+        collisionBlocksId.add(830);
     }
 
     private void addActionIds() {
-        actionBlocksId.add(165);
+        actionBlocksId.add(831);
     }
 
     private void actionBlocksInitializer() {
-        actionBlocksPos.put(new Vector2D( 23 * getTileSize(), 20 * getTileSize() ),
-                new Vector2D(35 * getTileSize(), 18 * getTileSize()));
-        actionBlocksPos.put(new Vector2D( 34 * getTileSize(), 17 * getTileSize() ),
-                new Vector2D(22 * getTileSize(), 21 * getTileSize()));
+        actionBlocksPos.put(new Vector2D( 31 * getTileSize(), 14 * getTileSize() ),
+                new Vector2D(48 * getTileSize(), 30 * getTileSize()));
+        actionBlocksPos.put(new Vector2D( 46 * getTileSize(), 31 * getTileSize() ),
+                new Vector2D(31 * getTileSize(), 16 * getTileSize()));
     }
 
     public Block createBlock(int id, Vector2D position) {

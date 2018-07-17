@@ -5,9 +5,9 @@ import com.mdud.dengine.graphics.Vector2D;
 public class StandingDummy extends Entity {
 
     public StandingDummy() {
-        super("sprites/testsheetformatted.png", 64, 64);
+        super("sprites/npctest.png", 32, 64);
         currentAction = DOWN;
-        setPosition(new Vector2D(120, 240));
+        setPosition(new Vector2D(1400, 1000));
     }
 
 

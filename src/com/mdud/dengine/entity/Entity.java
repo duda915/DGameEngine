@@ -35,14 +35,12 @@ public abstract class Entity {
 
     //collision
     protected BoundingBox collisionBox;
-    protected Vector2D committedPosition;
 
     public Entity(String file, int spriteSize) {
         spriteSheet = new Sprite(file, spriteSize);
         animation = new Animation();
         animation.setFrames(spriteSheet.getSpriteArrayCols());
         position = new Vector2D(0,0);
-        committedPosition = position.copyVector();
         collisionBox = new BoundingBox(position, spriteSize);
         collisionBox.updateBox(position);
     }
@@ -52,7 +50,6 @@ public abstract class Entity {
         animation = new Animation();
         animation.setFrames(spriteSheet.getSpriteArrayCols());
         position = new Vector2D(0,0);
-        committedPosition = position.copyVector();
         collisionBox = new BoundingBox(position, scaledSpriteSize);
         collisionBox.updateBox(position);
     }
@@ -76,7 +73,7 @@ public abstract class Entity {
                 position.incrementX(-xCompensation);
         }
         else if(xCompensation == yCompensation) {
-
+            // blocking between squares fix
         }
         else {
             if(centerDiffY > 0)
@@ -107,10 +104,6 @@ public abstract class Entity {
         position = committedPosition.copyVector();
         collisionBox.updateBox(position);
         */
-    }
-
-    public void commitPosition() {
-        committedPosition = position.copyVector();
     }
 
     public void update() {
