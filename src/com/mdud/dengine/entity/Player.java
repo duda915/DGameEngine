@@ -8,6 +8,7 @@ import com.mdud.dengine.utility.input.MouseHandler;
 
 import java.awt.*;
 
+
 public class Player extends Entity {
 
     public Player() {

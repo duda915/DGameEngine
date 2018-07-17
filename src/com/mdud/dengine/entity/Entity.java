@@ -9,6 +9,12 @@ import com.mdud.dengine.utility.input.MouseHandler;
 
 import java.awt.*;
 
+/* TODO enemy, chaser
+ * TODO entity statistics
+ * TODO info overlay
+ * TODO attacking
+ */
+
 public abstract class Entity {
 
     //Graphics
