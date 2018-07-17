@@ -58,8 +58,8 @@ public class BlockManager {
 
     private void teleportBlocksInitializer() {
         teleportBlockPos.put(new Vector2D( 31 * getTileSize(), 14 * getTileSize() ),
-                new Vector2D(48 * getTileSize(), 30 * getTileSize()));
-        teleportBlockPos.put(new Vector2D( 46 * getTileSize(), 31 * getTileSize() ),
+                new Vector2D(87 * getTileSize(), 11 * getTileSize()));
+        teleportBlockPos.put(new Vector2D( 87 * getTileSize(), 8 * getTileSize() ),
                 new Vector2D(31 * getTileSize(), 16 * getTileSize()));
     }
 
