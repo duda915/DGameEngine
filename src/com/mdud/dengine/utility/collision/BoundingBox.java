@@ -14,7 +14,6 @@ public class BoundingBox {
         this.size = size;
         distanceToSide = size/2;
         centerPos = new Vector2D(position.getWorldX() + size/2 , position.getWorldY() + size/2);
-
     }
 
     public boolean collides(BoundingBox box) {
@@ -38,7 +37,7 @@ public class BoundingBox {
     public void drawBoundingBox(Graphics2D graphics2D) {
         graphics2D.setColor(new Color(207, 40, 43));
         graphics2D.drawRect((int) (centerPos.getWorldX() - distanceToSide), (int) (centerPos.getWorldY() - distanceToSide),
-                size, size);
+                (int)distanceToSide*2, (int)distanceToSide*2);
     }
 
     public Vector2D getCenterPos() {
@@ -47,5 +46,9 @@ public class BoundingBox {
 
     public float getDistanceToSide() {
         return distanceToSide;
+    }
+
+    public void setBoxSize(int size) {
+        distanceToSide = size/2;
     }
 }

@@ -11,11 +11,12 @@ import java.awt.*;
 public class Player extends Entity {
 
     public Player() {
-        super("sprites/characterspritesheet.png", 32, 48);
+        super("sprites/characterspritesheet.png", 32, 64);
 
         setAnimationDelay(15);
         setMoveSpeed(5);
         setPosition(new Vector2D(GamePanel.width/2 - getEntitySize()/2, GamePanel.height/2 - getEntitySize()/2));
+        collisionBox.setBoxSize(32);
     }
 
 
