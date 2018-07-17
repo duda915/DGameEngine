@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd2fc981-ef28-4162-b109-30b2ecec92d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DGameEngine/com/mdud/dengine/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheet.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/sprites/testsheetformatted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DGameEngine/sprites/tilesformatted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/testsheet.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/testsheetformatted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/tilesformatted.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/StandingDummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/StandingDummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/entity/WalkingDummy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/entity/WalkingDummy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/managers/BlockManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/managers/BlockManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mdud/dengine/managers/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mdud/dengine/managers/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maps/testarena.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maps/testmap.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maps/testtileset.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sprites/old/testsheet.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sprites/old/testsheetformatted.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sprites/old/tilesformatted.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +31,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+            <state relative-caret-position="442">
+              <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,7 +139,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -322,7 +313,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110743000" />
+    <option name="totallyTimeSpent" value="110820000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,7 +338,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.43809524" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.43809524" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="13" />
       <window_info id="Designer" order="3" />
@@ -775,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mdud/dengine/entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="442">
+          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
