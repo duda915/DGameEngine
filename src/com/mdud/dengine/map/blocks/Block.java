@@ -2,6 +2,7 @@ package com.mdud.dengine.map.blocks;
 
 import com.mdud.dengine.entity.Entity;
 import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.managers.TileManager;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

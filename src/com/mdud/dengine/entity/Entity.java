@@ -61,7 +61,6 @@ public abstract class Entity {
 
     public void handleCollision(BoundingBox objectBox) {
 
-        Vector2D tmpVector = position.copyVector();
         float centerDiffX = collisionBox.getCenterPos().getX() - objectBox.getCenterPos().getX();
         float centerDiffY = collisionBox.getCenterPos().getY() - objectBox.getCenterPos().getY();
         float collisionDistance = collisionBox.getDistanceToSide() + objectBox.getDistanceToSide();
@@ -75,7 +74,11 @@ public abstract class Entity {
                 position.incrementX(xCompensation);
             else
                 position.incrementX(-xCompensation);
-        } else {
+        }
+        else if(xCompensation == yCompensation) {
+
+        }
+        else {
             if(centerDiffY > 0)
                 position.incrementY(yCompensation);
             else

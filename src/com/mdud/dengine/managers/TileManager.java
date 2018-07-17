@@ -21,10 +21,10 @@ public class TileManager {
         squareSize = blockManager.getTileSet().getTileSize();
 
         mapLoader = new MapLoader("resources/maps/testmap.tmx");
-        loadMap();
+        loadMap(mapLoader);
     }
 
-    public void loadMap() {
+    public void loadMap(MapLoader mapLoader) {
         map = mapLoader.getMap();
 
 

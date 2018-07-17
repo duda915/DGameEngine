@@ -2,6 +2,8 @@ package com.mdud.dengine.map.blocks;
 
 import com.mdud.dengine.entity.Entity;
 import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.managers.TileManager;
+import com.mdud.dengine.map.MapLoader;
 import com.mdud.dengine.utility.collision.BoundingBox;
 
 import java.awt.image.BufferedImage;
@@ -16,8 +18,9 @@ public class ActionBlock extends Block {
 
     @Override
     public void action(Entity entity) {
-        if(blockBox.collides(entity.getCollisionBox()))
-            entity.setPosition(new Vector2D(-20, -20));
+        if(!blockBox.collides(entity.getCollisionBox()))
+            return;
+        entity.getPosition().incrementPosition(20*blockSize, -10*blockSize);
     }
 
     @Override

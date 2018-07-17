@@ -2,8 +2,10 @@ package com.mdud.dengine.map.blocks;
 
 import com.mdud.dengine.entity.Entity;
 import com.mdud.dengine.graphics.Vector2D;
+import com.mdud.dengine.managers.TileManager;
 import com.mdud.dengine.utility.collision.BoundingBox;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class CollisionBlock extends Block {
@@ -18,6 +20,11 @@ public class CollisionBlock extends Block {
     public void action(Entity entity) {
         if(blockBox.collides(entity.getCollisionBox()))
             entity.handleCollision(blockBox);
+    }
+
+    @Override
+    public void draw(Graphics2D graphics) {
+        graphics.drawImage(blockSprite, null,(int) blockPosition.getWorldX(), (int) blockPosition.getWorldY());
     }
 
     @Override
