@@ -35,7 +35,6 @@ public class BoundingBox {
     }
 
     public void drawBoundingBox(Graphics2D graphics2D) {
-        graphics2D.setColor(new Color(207, 40, 43));
         graphics2D.drawRect((int) (centerPos.getWorldX() - distanceToSide), (int) (centerPos.getWorldY() - distanceToSide),
                 (int)distanceToSide*2, (int)distanceToSide*2);
     }
