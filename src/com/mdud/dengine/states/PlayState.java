@@ -38,6 +38,7 @@ public class PlayState extends GameState {
     public void render(Graphics2D graphics) {
         tileManager.draw(graphics);
         entityManager.render(graphics);
+        tileManager.lateDraw(graphics);
 
     }
 }

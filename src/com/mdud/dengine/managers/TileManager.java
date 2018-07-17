@@ -11,13 +11,18 @@ import java.util.ArrayList;
 public class TileManager {
     private BlockManager blockManager;
     private ArrayList<ArrayList<Integer>> map;
+    private ArrayList<Block> specialBlocks;
     private ArrayList<Block> blocks;
+    private ArrayList<Block> blocksLateRender;
     private MapLoader mapLoader;
     private int squareSize;
 
     public TileManager(BlockManager blockManager) {
         this.blockManager = blockManager;
         blocks = new ArrayList<>();
+        specialBlocks = new ArrayList<>();
+        blocksLateRender = new ArrayList<>();
+
         squareSize = blockManager.getTileSet().getTileSize();
 
         mapLoader = new MapLoader("resources/maps/dgedemo.tmx");
@@ -25,11 +30,33 @@ public class TileManager {
     }
 
     public void loadMap(MapLoader mapLoader) {
+        /*
+         * FORCED MAP LAYOUT
+         * Collision Layer
+         * Action Layer
+         * Terrain Layer
+         * Objects Layer
+         * -- Layers below rendered AFTER entities --
+         * Terrain Overlay Layer
+         * Objects Overlay Layer
+         *
+         */
         map = mapLoader.getMap();
 
+        // Collision + Action Blocks
+        populateBlocks(0, 2, specialBlocks);
 
-        //ugly
-        for(int i = 0; i < map.size(); i++) {
+        //Normal Blocks
+        populateBlocks(2, 4, blocks);
+
+        //Late Render Blocks
+        populateBlocks(4, 6, blocksLateRender);
+
+    }
+
+    private void populateBlocks(int layerBegin, int layerEnd, ArrayList<Block> blockList) {
+        //layerEnd is exclusive
+        for(int i = layerBegin; i < layerEnd; i++) {
             int width = 0;
             int height = 0;
 
@@ -41,22 +68,26 @@ public class TileManager {
                 }
                 if(map.get(i).get(j) == -1)
                     continue;
-                blocks.add(blockManager.createBlock(map.get(i).get(j), new Vector2D(
+                blockList.add(blockManager.createBlock(map.get(i).get(j), new Vector2D(
                         squareSize*width, squareSize*height)
                 ));
             }
         }
-
     }
 
     public void update(ArrayList<Entity> entities) {
         for(Entity entity : entities)
-            for(Block b : blocks)
+            for(Block b : specialBlocks)
                 b.action(entity);
     }
 
     public void draw(Graphics2D graphics) {
         for(Block b : blocks)
+            b.draw(graphics);
+    }
+
+    public void lateDraw(Graphics2D graphics) {
+        for (Block b : blocksLateRender)
             b.draw(graphics);
     }
 }

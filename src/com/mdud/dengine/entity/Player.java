@@ -18,7 +18,7 @@ public class Player extends Entity {
         setMoveSpeed(3);
 //        setPosition(new Vector2D(GamePanel.width/2 - getEntitySize()/2, GamePanel.height/2 - getEntitySize()/2));
         setPosition(new Vector2D(1000, 1200));
-        collisionBox.setBoxSize(32);
+        collisionBox.setBoxSize(48);
         position.setWorldPos(position.getX() - GamePanel.width/2 + getEntitySize()/2,
                 position.getY() - GamePanel.height/2 + getEntitySize()/2);
         collisionBox.updateBox(position);
